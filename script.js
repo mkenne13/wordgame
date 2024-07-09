@@ -71,12 +71,16 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     };
 
-    const placeWordInRow = (guess, row) => {
-        for (let i = 0; i < 5; i++) {
-            const cell = document.querySelector(.row-${row}.position-${i});
+const placeWordInRow = (guess, row) => {
+    for (let i = 0; i < 5; i++) {
+        const cell = document.querySelector(`.row-${row}.position-${i}`);
+        if (cell) {
             cell.textContent = guess[i];
+        } else {
+            console.error(`Cell not found for row-${row} position-${i}`);
         }
-    };
+    }
+};
 
     const shadeLetters = (guess, row) => {
         const targetWordArray = targetWord.split('');
