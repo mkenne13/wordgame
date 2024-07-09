@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function createRow() {
         for (let i = 0; i < 5; i++) {
             let cell = document.createElement('div');
-            cell.className = cell position-${i} row-${currentRow};
+            cell.className = `cell position-${i} row-${currentRow}`;
             board.appendChild(cell);
         }
         currentRow++;
